@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C34C96A72C8F7E88004CB420 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C96A62C8F7E88004CB420 /* HeaderView.swift */; };
 		C392CE1A2C87C14C00DE57A7 /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392CE192C87C14C00DE57A7 /* HIITFitApp.swift */; };
 		C392CE1C2C87C14C00DE57A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392CE1B2C87C14C00DE57A7 /* ContentView.swift */; };
 		C392CE1E2C87C14D00DE57A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C392CE1D2C87C14D00DE57A7 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C34C96A62C8F7E88004CB420 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C38D14FC2C8DED1000DC5B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C392CE162C87C14C00DE57A7 /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C392CE192C87C14C00DE57A7 /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				C392CE1B2C87C14C00DE57A7 /* ContentView.swift */,
 				C39F57082C8F5DC000CAA7C9 /* WelcomeView.swift */,
 				C39F570A2C8F5E1100CAA7C9 /* ExerciseView.swift */,
+				C34C96A62C8F7E88004CB420 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34C96A72C8F7E88004CB420 /* HeaderView.swift in Sources */,
 				C39F570B2C8F5E1100CAA7C9 /* ExerciseView.swift in Sources */,
 				C392CE1C2C87C14C00DE57A7 /* ContentView.swift in Sources */,
 				C39F57092C8F5DC000CAA7C9 /* WelcomeView.swift in Sources */,
