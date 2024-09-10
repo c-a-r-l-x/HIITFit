@@ -7,13 +7,17 @@ struct ExerciseView: View {
   }
   
   var body: some View {
-    VStack {
-      HeaderView(exerciseName: exercise.exerciseName)
-      Text("Video player")
-      Text("Timer")
-      Text("Start/Done button")
-      Text("Rating")
-      Text("History button")
+    GeometryReader { geometry in
+      VStack {
+        HeaderView(exerciseName: exercise.exerciseName)
+          .padding(.bottom)
+        VideoPlayerView(videoName: exercise.videoName)
+          .frame(height: geometry.size.height * 0.45)
+        Text("Timer")
+        Text("Start/Done button")
+        Text("Rating")
+        Text("History button")
+      }
     }
   }
 }
