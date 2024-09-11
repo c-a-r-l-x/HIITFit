@@ -1,9 +1,21 @@
 import SwiftUI
 
 struct ExerciseView: View {
+  @Binding var selectedTab: Int
   let index: Int
   var exercise: Exercise {
     Exercise.exercises[index]
+  }
+  var lastExercise: Bool {
+    index + 1 == Exercise.exercises.count
+  }
+  var startButton: some View {
+    Button("Start") {}
+  }
+  var doneButton: some View {
+    Button("Done") {
+      selectedTab = lastExercise ? 9 : selectedTab + 1
+    }
   }
   let interval: TimeInterval = 30
   
@@ -17,8 +29,8 @@ struct ExerciseView: View {
         Text(Date().addingTimeInterval(interval), style: .timer)
           .font(.system(size: geometry.size.height * 0.07))
         HStack(spacing: 150) {
-          Button("Start") {}
-          Button("Done") {}
+          startButton
+          doneButton
         }
         .font(.title3)
         .padding()
@@ -33,5 +45,5 @@ struct ExerciseView: View {
 }
 
 #Preview {
-  ExerciseView(index: 0)
+  ExerciseView(selectedTab: .constant(0), index: 0)
 }
