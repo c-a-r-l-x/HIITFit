@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct HeaderView: View {
+  @Binding var selectedTab: Int
   let title: String
   
   var body: some View {
@@ -8,17 +9,19 @@ struct HeaderView: View {
       Text(title)
         .font(.largeTitle)
       HStack {
-        Image(systemName: "hand.wave")
-        Image(systemName: "1.circle")
-        Image(systemName: "2.circle")
-        Image(systemName: "3.circle")
-        Image(systemName: "4.circle")
+        ForEach(Exercise.exercises.indices, id: \.self) { index in
+          let fill = index == selectedTab ? ".fill" : ""
+          Image(systemName: "\(index + 1).circle\(fill)")
+            .font(.title2)
+            .onTapGesture {
+              selectedTab = index
+            }
+        }
       }
-      .font(.title2)
     }
   }
 }
 
 #Preview {
-  HeaderView(title: "Squat")
+  HeaderView(selectedTab: .constant(0), title: "Squat")
 }

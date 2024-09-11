@@ -6,7 +6,7 @@ struct WelcomeView: View {
   var body: some View {
     ZStack {
       VStack {
-        HeaderView(title: "Welcome")
+        HeaderView(selectedTab: $selectedTab, title: "Welcome")
         Spacer()
         Button("History") {}
           .padding(.bottom)
