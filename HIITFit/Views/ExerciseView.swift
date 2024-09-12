@@ -3,6 +3,7 @@ import SwiftUI
 struct ExerciseView: View {
   @Binding var selectedTab: Int
   @State private var rating = 0
+  @State private var showHistory = false
   let index: Int
   var exercise: Exercise {
     Exercise.exercises[index]
@@ -38,8 +39,13 @@ struct ExerciseView: View {
         RatingView(rating: $rating)
           .padding()
         Spacer()
-        Button("History") {}
-          .padding(.bottom)
+        Button("History") {
+          showHistory.toggle()
+        }
+        .padding(.bottom)
+        .sheet(isPresented: $showHistory) {
+          HistoryView(showHistory: $showHistory)
+        }
       }
     }
   }
