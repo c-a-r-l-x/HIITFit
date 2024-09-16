@@ -13,6 +13,7 @@ class HistoryStore: ObservableObject {
     #if DEBUG
     createDevData()
     #endif
+    print("Initializing HistoryStore")
   }
   
   /// The date of the first element of exerciseDays is the user’s most recent exercise day.
@@ -20,7 +21,7 @@ class HistoryStore: ObservableObject {
   /// 2) If today is a new day, create a new ExerciseDay object and insert it at the beginning of the exerciseDays array.
   func addDoneExercise(_ exerciseName: String) {
     let today = Date()
-    if today.isSameDay(as: exerciseDays[0].date) { // 1
+    if let firstDate = exerciseDays.first?.date, today.isSameDay(as: firstDate) { // 1
       exerciseDays[0].exercises.append(exerciseName)
       print("Adding \(exerciseName)")
     } else { // 2
@@ -29,5 +30,6 @@ class HistoryStore: ObservableObject {
         at: 0
       )
     }
+    print("History: ", exerciseDays)
   }
 }
