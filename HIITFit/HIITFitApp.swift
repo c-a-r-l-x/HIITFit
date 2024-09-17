@@ -8,6 +8,9 @@ struct HIITFitApp: App {
     WindowGroup {
       ContentView()
         .environmentObject(historyStore)
+        .onAppear {
+          print(URL.documentsDirectory)
+        }
     }
   }
 }
