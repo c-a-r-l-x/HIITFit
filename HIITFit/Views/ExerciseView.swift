@@ -3,7 +3,6 @@ import SwiftUI
 struct ExerciseView: View {
   @Binding var selectedTab: Int
   @EnvironmentObject var history: HistoryStore
-  @State private var rating = 0
   @State private var timerDone = false
   @State private var showTimer = false
   @State private var showHistory = false
@@ -55,7 +54,7 @@ struct ExerciseView: View {
           TimerView(timerDone: $timerDone, size: geometry.size.height * 0.07)
         }
         Spacer()
-        RatingView(rating: $rating)
+        RatingView(exerciseIndex: index)
           .padding()
         Button("History") {
           showHistory.toggle()
