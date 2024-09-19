@@ -8,12 +8,26 @@ struct ExerciseDay: Identifiable {
 
 class HistoryStore: ObservableObject {
   @Published var exerciseDays: [ExerciseDay] = []
+  @Published var loadingError = false
+  
+  enum FileError: Error {
+    case loadFailure
+  }
   
   init() {
     #if DEBUG
-    createDevData()
+//    createDevData()
     #endif
+    do {
+      try load()
+    } catch {
+      loadingError = true
+    }
     print("Initializing HistoryStore")
+  }
+  
+  func load() throws {
+    throw FileError.loadFailure
   }
   
   /// The date of the first element of exerciseDays is the user’s most recent exercise day.
