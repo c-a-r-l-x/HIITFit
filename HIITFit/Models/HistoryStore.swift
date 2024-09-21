@@ -47,8 +47,26 @@ class HistoryStore: ObservableObject {
     }
   }
   
+  // 1) Read the data file into a byte buffer. This buffer is in the property list format.
+  // 2) Convert the property list format into a format the app can read.
+  // 3) Cast plistData from type Any to the [[Any]] type. Also, provide a fall-back of an empty array.
+  // 4) Convert each element of [Any] back to ExerciseDay. Also, ensure the data is of expected type and provide fall-backs if necessary.
   func load() throws {
-    throw FileError.loadFailure
+    guard let data = try? Data(contentsOf: dataURL) else { return } // 1
+    do {
+      let plistData = try PropertyListSerialization.propertyList(
+        from: data, options: [], format: nil
+      ) // 2
+      let convertedPlistData = plistData as? [[Any]] ?? [] // 3
+      exerciseDays = convertedPlistData.map {
+        ExerciseDay(
+          date: $0[1] as? Date ?? Date(),
+          exercises: $0[2] as? [String] ?? []
+        )
+      } // 4
+    } catch {
+      throw FileError.loadFailure
+    }
   }
   
   // The date of the first element of exerciseDays is the user’s most recent exercise day.
