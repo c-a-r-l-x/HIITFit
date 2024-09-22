@@ -15,12 +15,12 @@ struct ExerciseView: View {
     index + 1 == Exercise.exercises.count
   }
   var startButton: some View {
-    Button("Start") {
+    RaisedButtonView(text: "Start") {
       showTimer.toggle()
     }
   }
   var doneButton: some View {
-    Button("Done") {
+    RaisedButtonView(text: "Done") {
       history.addDoneExercise(exercise.exerciseName)
       timerDone = false
       showTimer.toggle()
@@ -43,6 +43,7 @@ struct ExerciseView: View {
           startButton
           doneButton
             .disabled(!timerDone)
+            .opacity(!timerDone ? 0.5 : 1.0)
             .sheet(isPresented: $showSuccess) {
               SuccessView(selectedTab: $selectedTab)
                 .presentationDetents([.medium, .large])
