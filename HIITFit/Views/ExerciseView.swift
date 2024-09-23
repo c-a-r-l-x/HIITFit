@@ -31,6 +31,17 @@ struct ExerciseView: View {
       }
     }
   }
+  var historyButton: some View {
+    Button(action: {
+      showHistory.toggle()
+    }, label: {
+      Text("History")
+        .fontWeight(.bold)
+        .padding([.leading, .trailing], 5)
+    })
+    .padding(.bottom, 10)
+    .buttonStyle(EmbossedButtonStyle())
+  }
   
   var body: some View {
     GeometryReader { geometry in
@@ -57,13 +68,10 @@ struct ExerciseView: View {
         Spacer()
         RatingView(exerciseIndex: index)
           .padding()
-        Button("History") {
-          showHistory.toggle()
-        }
-        .padding(.bottom)
-        .sheet(isPresented: $showHistory) {
-          HistoryView(showHistory: $showHistory)
-        }
+        historyButton
+          .sheet(isPresented: $showHistory) {
+            HistoryView(showHistory: $showHistory)
+          }
       }
     }
   }

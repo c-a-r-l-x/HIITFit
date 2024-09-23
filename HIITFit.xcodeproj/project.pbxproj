@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C30719562CA1AA0400CD6CA7 /* EmbossedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30719552CA1AA0400CD6CA7 /* EmbossedButtonStyle.swift */; };
 		C30CFEEE2C91F03A001E9A8F /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30CFEED2C91F03A001E9A8F /* RatingView.swift */; };
 		C30CFEF12C921054001E9A8F /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30CFEF02C921054001E9A8F /* ImageExtension.swift */; };
 		C34C96A72C8F7E88004CB420 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C96A62C8F7E88004CB420 /* HeaderView.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C30719552CA1AA0400CD6CA7 /* EmbossedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbossedButtonStyle.swift; sourceTree = "<group>"; };
 		C30CFEED2C91F03A001E9A8F /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		C30CFEF02C921054001E9A8F /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		C34C96A62C8F7E88004CB420 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				C3F5A9AB2C93254700DA6C95 /* HistoryView.swift */,
 				C392E1602C945700009A84EE /* SuccessView.swift */,
 				C3E1E0D42CA07E6B00C5CFAD /* RaisedButtonView.swift */,
+				C30719552CA1AA0400CD6CA7 /* EmbossedButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				C3F5A9AC2C93254700DA6C95 /* HistoryView.swift in Sources */,
 				C30CFEF12C921054001E9A8F /* ImageExtension.swift in Sources */,
 				C35D2EB22C90A2AC00D2FB7D /* VideoPlayerView.swift in Sources */,
+				C30719562CA1AA0400CD6CA7 /* EmbossedButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
