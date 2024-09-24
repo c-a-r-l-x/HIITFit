@@ -22,28 +22,31 @@ struct WelcomeView: View {
   }
   
   var body: some View {
-    ZStack {
+    GeometryReader { geometry in
       VStack {
         HeaderView(selectedTab: $selectedTab, title: "Welcome")
         Spacer()
-        historyButton
-          .sheet(isPresented: $showHistory) {
-            HistoryView(showHistory: $showHistory)
+        ContainerView {
+          ViewThatFits {
+            VStack {
+              WelcomeView.images
+              WelcomeView.texts
+              getStartedButton
+              Spacer()
+              historyButton
+            }
+            VStack {
+              WelcomeView.texts
+              getStartedButton
+              Spacer()
+              historyButton
+            }
           }
-      }
-      VStack {
-        HStack(alignment: .bottom) {
-          VStack(alignment: .leading) {
-            Text("Get fit")
-              .font(.largeTitle)
-            Text("with high intensity interval training")
-              .font(.headline)
-          }
-          Image("step-up")
-            .resizedToFill(width: 240, height: 240)
-            .clipShape(Circle())
         }
-        getStartedButton
+        .frame(height: geometry.size.height * 0.8)
+      }
+      .sheet(isPresented: $showHistory) {
+        HistoryView(showHistory: $showHistory)
       }
     }
   }

@@ -48,30 +48,37 @@ struct ExerciseView: View {
       VStack {
         HeaderView(selectedTab: $selectedTab, title: exercise.exerciseName)
           .padding(.bottom)
-        VideoPlayerView(videoName: exercise.videoName)
-          .frame(height: geometry.size.height * 0.45)
-        HStack(spacing: 150) {
-          startButton
-          doneButton
-            .disabled(!timerDone)
-            .opacity(!timerDone ? 0.5 : 1.0)
-            .sheet(isPresented: $showSuccess) {
-              SuccessView(selectedTab: $selectedTab)
-                .presentationDetents([.medium, .large])
-            }
-        }
-        .font(.title3)
-        .padding()
-        if showTimer {
-          TimerView(timerDone: $timerDone, size: geometry.size.height * 0.07)
-        }
         Spacer()
-        RatingView(exerciseIndex: index)
-          .padding()
-        historyButton
-          .sheet(isPresented: $showHistory) {
-            HistoryView(showHistory: $showHistory)
+        ContainerView {
+          VStack {
+            VideoPlayerView(videoName: exercise.videoName)
+              .frame(height: geometry.size.height * 0.35)
+              .padding(20)
+            HStack(spacing: 150) {
+              startButton
+              doneButton
+                .disabled(!timerDone)
+                .opacity(!timerDone ? 0.5 : 1.0)
+                .sheet(isPresented: $showSuccess) {
+                  SuccessView(selectedTab: $selectedTab)
+                    .presentationDetents([.medium, .large])
+                }
+            }
+            .font(.title3)
+            .padding(.horizontal)
+            if showTimer {
+              TimerView(timerDone: $timerDone, size: geometry.size.height * 0.07)
+            }
+            Spacer()
+            RatingView(exerciseIndex: index)
+              .padding()
+            historyButton
+              .sheet(isPresented: $showHistory) {
+                HistoryView(showHistory: $showHistory)
+              }
           }
+        }
+        .frame(height: geometry.size.height * 0.8)
       }
     }
   }
