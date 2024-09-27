@@ -20,6 +20,7 @@
 		C35D2EAF2C909A3400D2FB7D /* step-up.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C35D2EAB2C909A3400D2FB7D /* step-up.mp4 */; };
 		C35D2EB02C909A3400D2FB7D /* sun-salute.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C35D2EAC2C909A3400D2FB7D /* sun-salute.mp4 */; };
 		C35D2EB22C90A2AC00D2FB7D /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35D2EB12C90A2AC00D2FB7D /* VideoPlayerView.swift */; };
+		C37FCF382CA6F8D8001C037C /* history.plist in Resources */ = {isa = PBXBuildFile; fileRef = C37FCF372CA6F8D8001C037C /* history.plist */; };
 		C392CE1A2C87C14C00DE57A7 /* HIITFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392CE192C87C14C00DE57A7 /* HIITFitApp.swift */; };
 		C392CE1C2C87C14C00DE57A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392CE1B2C87C14C00DE57A7 /* ContentView.swift */; };
 		C392CE1E2C87C14D00DE57A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C392CE1D2C87C14D00DE57A7 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		C35D2EAB2C909A3400D2FB7D /* step-up.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "step-up.mp4"; sourceTree = "<group>"; };
 		C35D2EAC2C909A3400D2FB7D /* sun-salute.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sun-salute.mp4"; sourceTree = "<group>"; };
 		C35D2EB12C90A2AC00D2FB7D /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		C37FCF372CA6F8D8001C037C /* history.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = history.plist; sourceTree = "<group>"; };
 		C38D14FC2C8DED1000DC5B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C392CE162C87C14C00DE57A7 /* HIITFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C392CE192C87C14C00DE57A7 /* HIITFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIITFitApp.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		C392CE1F2C87C14D00DE57A7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				C37FCF372CA6F8D8001C037C /* history.plist */,
 				C3F5A9B12C93446000DA6C95 /* HistoryStoreDevData.swift */,
 				C392CE202C87C14D00DE57A7 /* Preview Assets.xcassets */,
 			);
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C35D2EAF2C909A3400D2FB7D /* step-up.mp4 in Resources */,
+				C37FCF382CA6F8D8001C037C /* history.plist in Resources */,
 				C392CE212C87C14D00DE57A7 /* Preview Assets.xcassets in Resources */,
 				C392CE1E2C87C14D00DE57A7 /* Assets.xcassets in Resources */,
 				C35D2EAE2C909A3400D2FB7D /* squat.mp4 in Resources */,

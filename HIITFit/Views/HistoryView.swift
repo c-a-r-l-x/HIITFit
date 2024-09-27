@@ -46,5 +46,5 @@ struct HistoryView: View {
 
 #Preview {
   HistoryView(showHistory: .constant(true))
-    .environmentObject(HistoryStore())
+    .environmentObject(HistoryStore(preview: true))
 }
